@@ -24,9 +24,12 @@ public class SecurityConfig {
         http.getConfigurer(OAuth2AuthorizationServerConfigurer.class).oidc(Customizer.withDefaults());
 
         http.exceptionHandling((exceptions) -> exceptions.
-                authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login"))).oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
+                authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login"))).
+                oauth2ResourceServer((OAuth2ResourceServerConfigurer) -> OAuth2ResourceServerConfigurer.jwt(Customizer.withDefaults()));
 
-        return null;
+
+
+        return http.build();
     }
 
 }
