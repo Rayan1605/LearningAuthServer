@@ -50,7 +50,7 @@ public class SecurityConfig {
 
 
     }
-
+//This is the User that will be able to log in
     @Bean
     public UserDetailsService userDetailsService() {
 
