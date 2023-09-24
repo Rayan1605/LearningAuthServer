@@ -36,6 +36,7 @@ public class SecurityConfig {
 
     @Bean
     @Order(2)
+    //This is saying that every request must be authenticated and if not then the user will be redirected to the login page
     public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception{
 
      http.authorizeHttpRequests((authorize) -> authorize.anyRequest()
