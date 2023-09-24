@@ -15,7 +15,7 @@ import org.springframework.security.web.authentication.LoginUrlAuthenticationEnt
 @Configuration // a Configuration class is a class that provides configuration to the application
 // at the time of initialization or before the application starts.
 public class SecurityConfig {
-
+//So this is setting up the Authorization Server
     @Bean
     @Order(1)
     public SecurityFilterChain authorizationServerSecurityFilterChain(HttpSecurity http)  throws Exception{
