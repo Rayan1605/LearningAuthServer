@@ -23,9 +23,10 @@ public class SecurityConfig {
         OAuth2AuthorizationServerConfiguration.applyDefaultSecurity(http);
 //This is setting up the open id connect
         http.getConfigurer(OAuth2AuthorizationServerConfigurer.class).oidc(Customizer.withDefaults());
-
+//This is setting up the Form login so if your not authenticated it will redirect the login form
         http.exceptionHandling((exceptions) -> exceptions.
                 authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login"))).
+               //THis below set up the Jwt
                 oauth2ResourceServer((OAuth2ResourceServerConfigurer) -> OAuth2ResourceServerConfigurer.jwt(Customizer.withDefaults()));
 
 
