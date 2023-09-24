@@ -68,14 +68,18 @@ public class SecurityConfig {
 
                 return new InMemoryUserDetailsManager(userDetails);
     }
-
     public RegisteredClientRepository registeredClientRepository() {
         RegisteredClient oidcClient = RegisteredClient.withId(UUID.randomUUID().toString())
                 .clientId("oidc-client")
+                //This is the secret that will be used to authenticate the client
+                //{noop} is used to indicate that the password is in plain text
                 .clientSecret("{noop}secret")
+                //This is the type of authentication that will be used
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
+                //This is the type of authorization that will be used
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
+                //This is the redirect uri that will be used
                 .redirectUri("http://127.0.0.1:8080/login/oauth2/code/oidc-client")
                 .postLogoutRedirectUri("http://127.0.0.1:8080/")
                 .scope(OidcScopes.OPENID)
