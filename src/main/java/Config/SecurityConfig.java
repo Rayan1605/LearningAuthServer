@@ -110,6 +110,7 @@ public class SecurityConfig {
         return new ImmutableJWKSet<>(jwkSet);
     }
 
+    //This is generating the public and private key
     private static KeyPair generateRsaKey() {
         KeyPair keyPair;
         try {
