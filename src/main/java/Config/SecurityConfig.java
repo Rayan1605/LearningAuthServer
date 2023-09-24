@@ -21,7 +21,7 @@ public class SecurityConfig {
     public SecurityFilterChain authorizationServerSecurityFilterChain(HttpSecurity http)  throws Exception{
 //This is the default security configuration for the authorization server
         OAuth2AuthorizationServerConfiguration.applyDefaultSecurity(http);
-
+//This is setting up the open id connect
         http.getConfigurer(OAuth2AuthorizationServerConfigurer.class).oidc(Customizer.withDefaults());
 
         http.exceptionHandling((exceptions) -> exceptions.
