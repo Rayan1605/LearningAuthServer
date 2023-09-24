@@ -34,4 +34,12 @@ public class SecurityConfig {
         return http.build();
     }
 
+    @Bean
+    @Order(2)
+    public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception{
+
+
+
+    }
+
 }
