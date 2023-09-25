@@ -126,10 +126,11 @@ public class SecurityConfig {
         return keyPair;
     }
 //This if for Decoding the Jwt
+    @Bean
     public JwtDecoder jwtDecoder() {
         return OAuth2AuthorizationServerConfiguration.jwtDecoder(jwkSource());
     }
-
+@Bean
     public AuthorizationServerSettings authorizationServerSettings(){
         return AuthorizationServerSettings.builder().build();
     }
