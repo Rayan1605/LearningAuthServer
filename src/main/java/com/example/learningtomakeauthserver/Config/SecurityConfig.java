@@ -1,4 +1,4 @@
-package Config;
+package com.example.learningtomakeauthserver.Config;
 
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
