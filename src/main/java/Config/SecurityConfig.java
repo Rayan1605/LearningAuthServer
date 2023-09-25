@@ -125,7 +125,7 @@ public class SecurityConfig {
         }
         return keyPair;
     }
-
+//This if for Decoding the Jwt
     public JwtDecoder jwtDecoder() {
         return OAuth2AuthorizationServerConfiguration.jwtDecoder(jwkSource());
     }
